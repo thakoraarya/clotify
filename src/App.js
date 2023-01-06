@@ -29,6 +29,7 @@ function App() {
       clotify.getMe().then(user => {
         console.log("my data", user);
 
+
         dispatch({
           type: 'SET_USER',
           user: user
