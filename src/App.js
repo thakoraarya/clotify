@@ -27,8 +27,7 @@ function App() {
       clotify.setAccessToken(_token);
 
       clotify.getMe().then(user => {
-        console.log("my data", user);
-
+        // console.log("my data", user);
 
         dispatch({
           type: 'SET_USER',
