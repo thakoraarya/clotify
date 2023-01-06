@@ -11,7 +11,8 @@ function App() {
   // --------------- V ---------------- here i forgot to add the word ""new"" before SpotifyWebApi and it take my 2hours to find the error
 
   const [token, setToken] = useState(null);
-  const [{ user }, dispatch] = useDataLayerValue();
+  // user error solved
+  const [ user , dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -25,7 +26,7 @@ function App() {
 
       clotify.setAccessToken(_token);
 
-      clotify.getMe().then((user) => {
+      clotify.getMe().then(user => {
         console.log("my data", user);
 
         dispatch({
