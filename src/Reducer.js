@@ -1,4 +1,4 @@
-export const intialState = {
+export const initialState = {
     user: null,
     playlists: [],
     playing: false,
