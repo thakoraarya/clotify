@@ -4,14 +4,14 @@ import Login from './components/Login';
 import { getTokenFromUrl } from "./Spotify";
 import SpotifyWebApi from 'spotify-web-api-js';
 import Player from "./components/Player";
-import { useDataLayerContext } from "./DataLayer";
+import { useDataLayerValue } from "./DataLayer";
 
+const clotify = new SpotifyWebApi();
 function App() {
   // --------------- V ---------------- here i forgot to add the word ""new"" before SpotifyWebApi and it take my 2hours to find the error
-  const clotify = new SpotifyWebApi();
 
   const [token, setToken] = useState(null);
-  const [{},dispatch] = useDataLayerContext();
+  const [{ user }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -25,14 +25,20 @@ function App() {
 
       clotify.setAccessToken(_token);
 
-      clotify.getMe().then(user => {
+      clotify.getMe().then((user) => {
         console.log("my data", user);
+
+        dispatch({
+          type: 'SET_USER',
+          user: user
+        })
       })
+
     }
-    // console.log("my token is : ", token);
+    console.log("my token is : ", token);
   });
 
-
+  console.log(user);
   return (
     <div>{
       token ? <Player /> : <Login />

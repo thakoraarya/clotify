@@ -1,24 +1,25 @@
-export const initialState = {
+export const intialState = {
     user: null,
-    Playing: false,
     playlists: [],
+    playing: false,
     item: null
 };
 
-export const reducer = (state, action) => {
+const reducer = (state, action) => {
     console.log(action);
 
-    switch (action.key) {
-        case "SET_USER":
-            return{
-            ...state,
-            user:action.user
-        }
 
+
+    switch (action.type) {
+        case "SET_USER":
+            return {
+                ...state,
+                user: action.user,
+            };
 
         default:
             return state;
-
     }
+};
 
-}
+export default reducer;
