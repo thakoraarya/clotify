@@ -1,12 +1,20 @@
 
 import React from 'react'
+import NavBar from './NavBar';
 
-const Player = () => {
-    return (
-        <div>
-           <p className='text-2xl'> Welcome to clotify</p>
-            </div>
-    )
+
+
+const Player = ({clotify}) => {
+  return (
+    <div>
+        <NavBar/>
+        hey its me player
+    </div>
+  )
 }
 
-export default Player();
+
+
+
+
+export default Player

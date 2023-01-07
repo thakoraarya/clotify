@@ -16,7 +16,6 @@ const Login = () => {
           alt="login vector"
         />
 
-        {/* <Link link={loginUrl} className=" my-auto text-xl bg-clotify text-spotify-white w-[472px] p-5 rounded-full font-sens font-bold"> */}
         <a
           href={loginUrl}
           className=" my-auto text-xl bg-clotify text-spotify-white w-[472px] p-5 rounded-full font-sens font-bold">

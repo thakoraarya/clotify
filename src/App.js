@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import './App.css';
 import Login from './components/Login';
 import { getTokenFromUrl } from "./Spotify";
@@ -6,45 +6,46 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import Player from "./components/Player";
 import { useDataLayerValue } from "./DataLayer";
 
+// ------------- V ---------------- here i forgot to add the word ""new"" before SpotifyWebApi and it take my 2hours to find the error
 const clotify = new SpotifyWebApi();
 function App() {
-  // --------------- V ---------------- here i forgot to add the word ""new"" before SpotifyWebApi and it take my 2hours to find the error
 
-  const [token, setToken] = useState(null);
+  // const [token] = useState(null);
   // user error solved
-  const [ user , dispatch] = useDataLayerValue();
+  const [{ user,token }, dispatch] = useDataLayerValue();
+  // const [{ user,token,setToken }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
-
     const _token = hash.access_token;
 
     if (_token) {
-      setToken(_token);
-
+      dispatch({
+        type: 'SET_TOKEN',
+        token,
+      });
+      console.log("i have a token", token);
       clotify.setAccessToken(_token);
-
-      clotify.getMe().then(user => {
-        // console.log("my data", user);
-
+      clotify.getMe().then((user) => {
         dispatch({
-          type: 'SET_USER',
-          user: user
-        })
-      })
-
+          type: "SET_USER",
+          user,
+        });
+      });
     }
-    console.log("my token is : ", token);
-  });
+  },
+   [dispatch,token]);
 
-  console.log(user);
+  console.log("token is", token);
+  console.log("user is", user);
   return (
-    <div>{
-      token ? <Player /> : <Login />
-    }
+    <div>
+      {
 
+        user ? <Player  clotify={clotify}/> : <Login />
+      }
     </div>
 
   );

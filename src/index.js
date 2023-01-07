@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import {DataLayer} from './DataLayer'
+import { DataLayer } from './DataLayer'
 import reducer from './Reducer'
 import initialState from './Reducer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <DataLayer initialState={initialState} reducer={reducer}>
-    <App />
-  </DataLayer>,
+
+    <DataLayer initialState={initialState} reducer={reducer}>
+      <App />
+    </DataLayer>,
+
+
 );
 
 reportWebVitals();
