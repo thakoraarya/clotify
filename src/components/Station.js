@@ -25,7 +25,7 @@ const Station = () => {
 
 
         </section>
-        {/* here are the icons of controller */}
+        {/* here are the icons of controller yes */}
         <section className=' text-clotify-primary flex flex-row justify-evenly'>
           <span className="material-symbols-outlined">
             favorite
