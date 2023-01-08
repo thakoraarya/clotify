@@ -18,7 +18,7 @@ const Login = () => {
 
         <a
           href={loginUrl}
-          className=" my-auto text-xl bg-clotify text-spotify-white w-[472px] p-5 rounded-full font-sens font-bold">
+          className=" my-auto text-xl  bg-clotify-primary text-spotify-white w-[472px] p-5 rounded-full font-sens font-bold">
           LOGIN WITH{" "}
           <span
             className="underline cursor-pointer"

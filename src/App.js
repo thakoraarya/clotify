@@ -41,7 +41,7 @@ function App() {
   console.log("token is", token);
   console.log("user is", user);
   return (
-    <div>
+    <div className=" bg-clotify-white h-screen overflow-hidden">
       {
 
         user ? <Player  clotify={clotify}/> : <Login />

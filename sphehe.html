@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify Website</title>
+    <style>
+      /* Define the color variables */
+      :root {
+        --primary-color: #E47981;
+        --secondary-color: #E57373;
+        --accent-color-1: #EF9A9A;
+        --accent-color-2: #F44336;
+        --accent-color-3: #D32F2F;
+      }
+
+      /* Use the primary color for the navigation bar and buttons */
+      .navbar {
+        background-color: var(--primary-color);
+      }
+      .btn {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      /* Use the secondary color for headings and other important text */
+      h1, h2, h3 {
+        color: var(--secondary-color);
+      }
+
+      /* Use the accent colors for decorative elements and graphic elements */
+      .progress-bar {
+        background-color: var(--accent-color-1);
+      }
+      .album-art {
+        background-color: var(--accent-color-2);
+      }
+      .player-controls {
+        background-color: var(--accent-color-3);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#">Discover</a>
+      <a href="#">Library</a>
+      <a href="#">Premium</a>
+    </nav>
+    <!-- Page content -->
+    <main>
+      <!-- Heading -->
+      <h1>Welcome to Spotify</h1>
+      <!-- Button -->
+      <button class="btn">Sign up for Premium</button>
+      <!-- Progress bar -->
+      <div class="progress-bar">
+        <div style="width: 75%;"></div>
+      </div>
+      <!-- Album artwork -->
+      <div class="album-art">
+        <img src="album-art.jpg" alt="Album art">
+      </div>
+      <!-- Music player controls -->
+      <div class="player-controls">
+        <button class="btn"><i class="fas fa-backward"></i></button>
+        <button class="btn"><i class="fas fa-play"></i></button>
+        <button class="btn"><i class="fas fa-forward"></i></button>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>Copyright 2021 Spotify</p>
+    </footer>
+  </body>
+  </html>
+
